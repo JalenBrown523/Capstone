@@ -3,7 +3,6 @@ import React from 'react'
 import { auth } from '../firebase'
 import { useNavigation } from '@react-navigation/native'
 
-
 const HomeScreen = () => {
   const navigation = useNavigation()
 
@@ -16,16 +15,11 @@ const HomeScreen = () => {
       .catch(error => alert(error.message))
   }
 
-
-
   return (
     <View style={styles.container}>
       <Text>Email: {auth.currentUser?.email}</Text>
-      <TouchableOpacity
-        onPress={handleSignOut}
-        style={styles.button}
-      >
-          <Text style={styles.buttonText}>Sign out</Text>
+      <TouchableOpacity onPress={handleSignOut} style={styles.button}>
+        <Text style={styles.buttonText}>Sign out</Text>
       </TouchableOpacity>
     </View>
   )
@@ -37,7 +31,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     justifyContent: 'center',
-    alignItems: 'center',   
+    alignItems: 'center',
   },
   button: {
     backgroundColor: '#0782F9',
@@ -47,11 +41,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     marginTop: 40,
   },
-  buttonText:{
+  buttonText: {
     color: 'white',
     fontWeight: '700',
-    fontSize: 16, 
-
+    fontSize: 16,
   },
-
 })
